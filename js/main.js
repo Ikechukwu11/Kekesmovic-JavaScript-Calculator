@@ -4,6 +4,7 @@ var livesrc = true;
     function init(){
     livesrc = false;
     pWr.value = 'OFF';
+    shutdown.style.color = 'turquoise';
 }
 
 function powerOn() {
@@ -12,6 +13,7 @@ function powerOn() {
  document.getElementById('thumb').style.backgroundColor = 'turquoise';
  document.getElementById('pWr').style.color = 'turquoise';
 pWr.value = 'ON';
+ shutdown.style.color = 'white';	
  }
  
 function powerOff() {
@@ -19,7 +21,8 @@ function powerOff() {
 document.getElementById('thumb').value  = "" ;
 document.getElementById('thumb').style.backgroundColor = '#c3c2ab';
 document.getElementById('pWr').style.color = 'white'
-pWr.value = 'OFF'
+pWr.value = 'OFF';
+shutdown.style.color = 'turquoise';	
 }
  
  function numerO(num){
