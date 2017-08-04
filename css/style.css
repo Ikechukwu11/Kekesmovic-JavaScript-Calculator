@@ -14,7 +14,8 @@
 .iec_power{
   font-family: 'iec_symbols_unicoderegular';
   font-style: normal;
-	
+}
+
 body {
 	background: black !important;
 	font-family: "digit7";
