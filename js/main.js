@@ -4,7 +4,7 @@ var livesrc = true;
     function init(){
     livesrc = false;
     pWr.value = 'OFF';
-    shutdown.style.color = 'turquoise';
+    shutdown.style.color = 'white';
 }
 
 function powerOn() {
@@ -13,7 +13,7 @@ function powerOn() {
  document.getElementById('thumb').style.backgroundColor = 'turquoise';
  document.getElementById('pWr').style.color = 'turquoise';
 pWr.value = 'ON';
- shutdown.style.color = 'white';	
+ shutdown.style.color = 'turquoise';	
  }
  
 function powerOff() {
