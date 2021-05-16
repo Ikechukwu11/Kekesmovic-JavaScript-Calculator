@@ -1,0 +1,91 @@
+@import url('font.css');
+@font-face {
+    font-family: 'iec_symbols_unicoderegular';
+    src: url('Unicode_IEC_symbol.eot');
+    src: url('Unicode_IEC_symbol.eot?#iefix') format('embedded-opentype'),
+         url('Unicode_IEC_symbol.woff2') format('woff2'),
+         url('Unicode_IEC_symbol.woff') format('woff'),
+         url('Unicode_IEC_symbol.ttf') format('truetype'),
+         url('Unicode_IEC_symbol.svg#iec_symbols_unicoderegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+		margin-left:5px !important;
+		margin-right:5px !important;
+	}
+	.text-turquoise{
+		color:turquoise !important;
+		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px turquoise, 0 0 30px turquoise, 0 0 40px turquoise, 0 0 55px turquoise, 0 0 75px turquoise;
+	}
+	.text-danger{
+		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #dc3545, 0 0 30px #dc3545, 0 0 40px #dc3545, 0 0 55px #dc3545, 0 0 75px #dc3545;
+	}
+.iec_power{
+  font-family: 'iec_symbols_unicoderegular';
+  font-style: normal;
+}
+#screen   {
+	color: black;
+	text-align-last: auto;
+    word-break: break-all;
+	text-align: right;
+	font-family: "digit7";
+	font-size: 30px;
+	background: #c3c2ab;
+	padding-top:40px;
+	padding-bottom:40px;   
+	width: 100%;
+	margin: 0px 0 0px 0;
+	border: 0;
+	outline: 0;
+	border-radius: 0px;
+	box-shadow: 0px  -7px 0 #333;
+	text-shadow: 0 1px 0 #333;
+	padding: 40px 20px  40px  40px;  
+}
+
+#ans {
+	font-size: 35px;
+}
+
+.neon {
+    text-shadow: 0 0 5px #000, 0 0 10px #fff, 0 0 20px turquoise, 0 0 30px turquoise, 0 0 40px turquoise, 0 0 55px turquoise, 0 0 75px turquoise;	
+}
+
+@media (max-width:576px){
+	
+	#calculator {
+		max-width:400px !important;
+	}
+.btn-lg{
+    padding: .5rem 1.6rem !important;
+    /*padding: 1rem 1.4rem !important;*/
+	font-size: .64rem !important;
+}
+}
+    @media (max-width:343px){
+	.button{
+	padding: 0.5rem 1.3rem !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+	width:50px !important;
+	text-align:center !important;
+	}
+	#screen {
+		height: 150px !important;
+	}
+	div#calculator.container.mt-5{
+		margin-top: 0 !important;
+	}
+	.button1 {
+height: 40px;
+	}
+	.iec_power {
+    margin-left: -5px;
+	
+	}
+	
+	}
+	/*<span class="d-block d-sm-none" style="font-size: 12px;margin-left: -15px;">ac/on</span>*/

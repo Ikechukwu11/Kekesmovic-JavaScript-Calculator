@@ -1,58 +1,166 @@
- <!DOCTYPE html>
-    <html>
-    <head>
+<html><head>
       <title>JS CALCULATOR</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel='stylesheet' type='text/css' href='css/style.css'>
-<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-<link href="css/bootstrap.min.css" rel="stylesheet">   
-<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src='js/main.js'></script>
+<meta name="theme-color" content="#343a40 ">
+<link href="css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.min.css">
+<link rel="stylesheet" id="theme" type="text/css" href="css/default.css">
+<!--link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"-->
+<link rel="stylesheet" href="font-awesome/v5/css/all.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/main.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 </head>
-<body>
-<div class="container" id="calculator">
-<h5 style= "text-align: center" color:"black"><b>kEkEsMoViC jS cAlCuLaToR</h5></b>
-<table>
-		<input type="text"id="thumb" value="" disabled />
-		<tbody class="">
-      <tr>
-      <td><input type="button" id="pWr" value="AC" onclick="powerOn()" class="btn-danger btn-lg button2"/></td>
-        <td><input type="button" id="btnBackspace" class="button3 btn-lg btn-warning" value="CE"onclick="cleaR()" /></td>
-        <td><input type="button" id="btnDivide"  class="button btn-lg btn-info" value=" &divide" onclick="btnDiv()" /></td>
-        <td><input type="button" id="btnMultiply" value="&times" onclick="btnMult()"   class="button btn-lg btn-info" /></td>
-      </tr>
-      <tr>
-        <td><input type="button" id="btnSeven" value="7" class="button btn-lg btn-info" onclick="numerO(7)" /></td>
-        <td><input type="button" id="btnEight" onclick="numerO(8)"  value="8" class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="btnNine" value="9" onclick="numerO(9)"  class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="btnSubtract" value="-" onclick="btnSub()"  class="button btn-lg btn-info" /></td> 
-        </tr>
-      <tr>
-<td><input type="button" id="btnFour" value="4" onclick="numerO(4)"  class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="btnFive" value="5" onclick="numerO(5)"  class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="btnSix" value="6" onclick="numerO(6)"  class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="btnAdd" value="+" onclick="btnPlus()" class="button btn-lg btn-info" /></td>
-          
-        </tr>
-      <tr>
-<td><input type="button" id="btnOne" value="1" onclick="numerO(1)" class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="button btnTwo" value="2" onclick="numerO(2)" class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="btnThree" value="3" onclick="numerO(3)"  class="button btn-lg btn-info" /></td>
-        <td><input type="button" id="btnDecimal" onclick="btnDec()" value="." class="button btn-lg btn-info" /></td>
-       <tr>
-        <td><input type="button" id="btnZero" value="0" onclick="numerO(0)" class="button btn-lg btn-info" /></td>
-         
- <td><input type="button" id="btnEquals" value="=" onclick="calC()" class="button1 btn-lg btn-block btn-success" /><td>
- <td><input type="button" id="shutdown" onclick="powerOff()"  class="button1 btn-lg btn-block btn-success" value="&#x23FB;"/><td>
- </tr>
- 
-  </table>
-		<div class="clear"></div>
+<style>
+#colour{
+    height: calc(2.4rem + 2px);
+    padding: .45rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    border-radius: 0;
+    display: block !important; 
+}
+
+#style-switch-button {
+    position: fixed;
+    top: 120px;
+    right: 0px;;
+
+    border-radius: 0    z-index: 2;
+}
+#style-switch {
+    width: 180px;
+    padding: 20px;
+    position: fixed;
+    top: 160px;
+	right: 0;
+    background: #fff;
+    border: solid 1px #ced4da;
+    z-index: 2000;
+    }
+
+	@media (max-width:576px){
+	/*#style-switch-button {
+    position: fixed;
+    top: 0px;
+    left:45%;
+    border-radius: 0;
+    z-index: 2;
+}    
+     #style-switch {
+	  top: 40px;
+      left: 25%;
+	 }*/
+	}
+</style>
+<body class="bg-dark">
+<div class="container mt-5" style="max-width:500px;border-top-style: groove;border-top-right-radius: 45px;border-top-left-radius: 45px;border-bottom-left-radius: 45px;border-bottom-right-radius:  45px;" id="calculator" align="center">
+	<div class="mt-3 mb-3" style="
+">
+							 
+<text id="logo" class="font-weight-bold text-uppercase" style="color: white;">kEkEsMoViC jS cAlCuLaToR</text>
+</div>
+<div class="" style="
+">
+    <!--textarea rows="1" type="number" id="thumb" value="" disabled=""></textarea-->
+    <div id="calculator-inner" class="row" style="
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+">
+      <div class="col-12" id="screen-holder" style="
+    
+    border-bottom-style: none;
+    border-bottom-right-radius: -24px;
+">
+<div class id="screen" style="height: 175px;background-color: rgb(195, 194, 171);">
+<div type="number" id="thumb" value="" disabled></div>
+<div><b id="ans"></b></div>
+  </div>
+  </div>
+  <div class="container" id="calculator-outer"><br>
+  <div class="row" style="<!--margin-bottom:-25px!important;-->">
+    <div  class="col-9">
+<div id="left-num">
+  <button id="btnSeven" value="7" class="button btn btn-lg btn-info" onclick="numerO(7)">7</button>
+        <button id="btnEight" onclick="numerO(8)" value="8" class="button btn btn-lg btn-info">8</button>
+        <button id="btnNine" value="9" onclick="numerO(9)" class="button btn btn-lg btn-info">9</button>
+        <button id="btnFour" value="4" onclick="numerO(4)" class="button btn btn-lg btn-info">4</button>
+        <button id="btnFive" value="5" onclick="numerO(5)" class="button btn btn-lg btn-info">5</button>
+        <button id="btnSix" value="6" onclick="numerO(6)" class="button btn btn-lg btn-info">6</button>
+        <button id="btnOne" value="1" onclick="numerO(1)" class="button btn btn-lg btn-info">1</button>
+        <button id="button btnTwo" value="2" onclick="numerO(2)" class="button btn btn-lg btn-info">2</button>
+        <button id="btnThree" value="3" onclick="numerO(3)" class="button btn btn-lg btn-info">3</button>
+        <button id="btnDecimal" onclick="btnDec()" value="." class="button btn btn-lg btn-info">.</button>
+       <button id="btnZero" value="0" onclick="numerO(0)" class="button btn btn-lg btn-info">0</button>
+       <button id="btnEquals" value="=" onclick="calC()" class="button btn btn-lg btn-lg btn-success">=</button>
+	   <button id="pWr" value="AC" onclick="powerOn()" class="button1 btn btn-danger btn-lg button2" style="color: white;">AC/on
+    </button>
+	<button id="btnBackspace" class="button1 btn btn-lg btn-warning" value="CE" onclick="cleaR()">Delete</button>
+</div>
+</div>
+        <div class="col-3" id="right-num">
+	<div>
+
+	<button id="btnDivide" class="button btn btn-lg btn-info" value=" ÷" onclick="btnDiv()">÷</button>
+		<button id="btnMultiply" value="×" onclick="btnMult()" class="button btn btn-lg btn-info">×</button>
+      <button id="btnSubtract" value="-" onclick="btnSub()" class="button btn btn-lg btn-info">-</button>
+	  <button id="btnAdd" value="+" onclick="btnPlus()" class="button btn btn-lg btn-info">+</button>
+	  <button id="shutdown" onclick="powerOff()" class="button btn btn-lg btn-danger"><span id="iec_power" class="iec_power text-danger">⏻</span></button>
+	  </div>
+</div>
+	 
+</div>
+</div> 
+</div>
+<div id="patch" class="text-center" align="center"><b style="text-align:center;color: transparent;">h</b></div>
+</div>
+</div>
+    <div class="clear"></div>
     <footer>
-	</footer>
-	</body>
-    </html>
+	<button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-theme btn-sm d-none d-sm-inline-block">Theme</button>
+	<button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-theme d-inline-block d-sm-none"><i class="fas fa-palette"></i></button>
+    <div id="style-switch" class="collapse">
+      <h6 class="d-none mb-3">Select theme</h6>
+      <form>
+        <select name="colour" onchange="theme()" id="colour" class="form-control">
+          <option disabled>select theme</option>
+          <option value="default">default</option>
+          <option value="pink">pink</option>
+          <option value="teal">teal</option>
+
+        </select>
+      </form>
+    </div>
+  </footer>
+  <script>
+	/*$(document).ready(function(){
+		$("#colour").change(function(){
+		if(""!==$(this).val()){
+		var e="css/"+$(this).val()+".css";
+		var a=$("link#theme"); 
+		a.attr("href",e)
+		};
+		});
+	});*/
+
+  function theme(){
+	var b= document.getElementById("colour").value;
+  var a= document.getElementById("theme").href="css/"+b+".css";
+  var c = document.getElementById("patch");
+var d = document.getElementById("calculator");
+  if (b=='teal'){
+     c.style.display='none';
+     
+     //d.style.border-bottom-left-radius= 90px;
+    //d.style.border-bottom-right-radius= 90px;
+  }
+  else {
+    c.style.display='block';
+  }
+}
+ </script>
+  
+    </body></html>
